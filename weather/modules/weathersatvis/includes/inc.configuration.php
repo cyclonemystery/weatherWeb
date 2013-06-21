@@ -23,7 +23,7 @@ if(!defined('VERIFIED'))
   $MaxImagesNum = 10;
 
   # Geschwindigkeit der Bilderwechsel in Millisekunden
-  $ImageChangingSpeed = 700;
+  $ImageChangingSpeed = 900;
 
   # Größe der Satelliten-Bilder in Pixeln
   $ImageSize = array
@@ -35,24 +35,24 @@ if(!defined('VERIFIED'))
   );
 
 ####################################################################################
-# Variabeln fuer die Verbindung zur MySQL Datenbank
+# Variabeln für die Verbindung zur MySQL Datenbank
 ####################################################################################
-
+  
  # Datenbank Zugangsdaten
  $DB = array
   (
-   'Host' => 'xxxxxxxxxxxxxxxxxxxxx', # Datenbankserver, zumeist 'loacalhost'
-   'Database' => 'xxxxxxxxxxxxxxxxx', # Zu selektierende Datenbank
-   'User' => 'xxxxxxxxxxxxxxxxxxx', # Datenbankbenutzername
-   'Password' => 'xxxxxxxxxxxxxxxx', # Datenbankpasswort
+   'Host' => 'xxxxxx', # Datenbankserver, zumeist 'loacalhost'
+   'Database' => 'xxxxx', # Zu selektierende Datenbank
+   'User' => 'xxxxxxx', # Datenbankbenutzername
+   'Password' => 'xxxxxxxx', # Datenbankpasswort
    'Prefix' => 'lingx_weather' # Bitte nicht ändern!
   );
 
-  # Tabelle(n) des Systems bestimmen
-  define('DB_TABLE_SATVIS_IMAGES', $DB['Prefix'].'_satvis_images');
+  # Tabelle(n) des Systems bestimmen    SATVIS stand nach DB_TABLE
+  define('DB_TABLE_SAT_IMAGES', $DB['Prefix'].'_satvis_images');
 
 ####################################################################################
-# Variabeln fuer die FTP Verbindung zum Deutschen Wetterdienst (DWD)
+# Variabeln für die FTP Verbindung zum Deutschen Wetterdienst (DWD)
 ####################################################################################
 
   # Zu selektierender Ordner auf FTP
@@ -79,19 +79,19 @@ if(!defined('VERIFIED'))
 
   # CSS Style
   $Style = '
-        #weathersatvis
+        #weathersat
         {
           font-family: Verdana, Geneva;
           color: #'.$DefaultColor.';
           font-size: 11px;
           width: 100%;
         }
-    #weathersatvis .sat
+    #weathersat .sat
         {
           width: '.$ImageSize['width'].'px;
           height: '.$ImageSize['height'].'px;
       	}
-    #weathersatvis .buttons 
+    #weathersat .buttons 
 	{ 
 	  width: 160px; 
 	  height: 36px;
@@ -99,7 +99,7 @@ if(!defined('VERIFIED'))
 	  clear: both;
 	  margin: 6px 0px 0px '.(($ImageSize['width'] - 160) / 2).'px;
 	}
-	#weathersatvis .previous, #weathersatvis .next, #weathersatvis .play, #weathersatvis .pause 
+	#weathersat .previous, #weathersat .next, #weathersat .play, #weathersat .pause 
 	{
 	  cursor: pointer; 
 	  float: left;
@@ -107,19 +107,19 @@ if(!defined('VERIFIED'))
 	  height: 36px;
 	  margin: 2px;
 	}
-	#weathersatvis .previous
+	#weathersat .previous
 	{
 	  background: url("modules/weathersatvis/images/previous.png") transparent no-repeat;
 	}
-	#weathersatvis .play
+	#weathersat .play
 	{
 	  background: url("modules/weathersatvis/images/play.png") transparent no-repeat;
 	}
-	#weathersatvis .pause
+	#weathersat .pause
 	{
 	  background: url("modules/weathersatvis/images/pause.png") transparent no-repeat;
 	}
-	#weathersatvis .next
+	#weathersat .next
 	{
 	  background: url("modules/weathersatvis/images/next.png") transparent no-repeat;
 	}

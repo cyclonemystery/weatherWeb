@@ -68,7 +68,7 @@ function lingx_DBArray($SQLString, $IsSingleArray = true)
   }
   return array('Num' => $NumRows, 'Data' => $Array);
 }
-# Datenbank-Sicherheitsfunktion fuer HTML Daten
+# Datenbank-Sicherheitsfunktion für HTML Daten
 function lingx_SecurityHTML($Value)
 {
   $Value = (isset($Value) && !empty($Value) || $Value == 0) ? $Value : '';
@@ -81,7 +81,7 @@ function lingx_SecurityHTML($Value)
   $Value = stripslashes(str_replace('\r\n', '', mysql_real_escape_string(trim($Value))));
   return $Value;
 }
-# Datenbank-Sicherheitsfunktion fuer alle anderen Daten, ausgenommen HTML
+# Datenbank-Sicherheitsfunktion für alle anderen Daten, ausgenommen HTML
 function lingx_Security($Value)
 {
   $Unmask = array('*', "'", '"');
@@ -93,9 +93,9 @@ function lingx_Security($Value)
   $Value = lingx_SecurityHTML(htmlentities($Value));
   return $Value;
 }
-# Benoetigte Tabelle erstellen, falls sie nicht existiert
+# Benötigte Tabelle erstellen, falls sie nicht existiert
 lingx_DBQuery("
-  create table if not exists ".DB_TABLE_SATVIS_IMAGES." (
+  create table if not exists ".DB_TABLE_SATVIS_IMAGES." (    
 	sat_image_id int(11) not null auto_increment,
 	sat_image_date datetime default '0000-00-00 00:00:00',
 	sat_image_name varchar(250) not null,

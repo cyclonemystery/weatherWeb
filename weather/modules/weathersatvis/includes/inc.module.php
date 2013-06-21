@@ -10,7 +10,7 @@ if(!defined('VERIFIED'))
 # Modul Variabeln bestimmen
 ####################################################################################
   # Name des Modules
-  $ModuleName = 'SWIS Satwetter';
+  $ModuleName = 'SWIS SATWETTER';
 
   # Version des Modules
   $ModuleVersion = '1.0.0';

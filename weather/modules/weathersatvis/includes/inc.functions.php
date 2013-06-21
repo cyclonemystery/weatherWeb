@@ -18,7 +18,7 @@ function lingx_DBInsertImage($ImageName)
 }
 
 # Bild(er) von einem FTP Server in den lokalen Cache Ordner laden
-function lingx_GetRemoteSatvisImages($FTPArray, $LocalDir, $RemoteDir, $RemoteFiles, $DownloadInterval)
+function lingx_GetRemoteSatImages($FTPArray, $LocalDir, $RemoteDir, $RemoteFiles, $DownloadInterval)
 {
   global $Texts, $ErrorColor;
   $NumInserted = 0;

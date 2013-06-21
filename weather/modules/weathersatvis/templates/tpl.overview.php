@@ -52,4 +52,7 @@ else
   <?php
 }
 echo '</div>';
+  #Anzeigen der Legende
+  echo "<p><div align='center'><img src=\"/dwdgrund/weather/modules/weathersatvis/images/legend_satweather.png\"></p></div>";
+ 
 ?>

@@ -90,6 +90,7 @@ if(!defined('VERIFIED'))
         {
           width: '.$ImageSize['width'].'px;
           height: '.$ImageSize['height'].'px;
+          margin: auto; #hinzugefügt
       	}
     #weathersat .buttons 
 	{ 
@@ -97,7 +98,8 @@ if(!defined('VERIFIED'))
 	  height: 36px;
 	  position: relative;
 	  clear: both;
-	  margin: 6px 0px 0px '.(($ImageSize['width'] - 160) / 2).'px;
+	  #margin: 6px 0px 0px '.(($ImageSize['width'] - 160) / 2).'px;   #Originaleintrag
+    margin: auto;
 	}
 	#weathersat .previous, #weathersat .next, #weathersat .play, #weathersat .pause 
 	{

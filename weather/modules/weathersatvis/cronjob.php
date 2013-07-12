@@ -16,7 +16,7 @@ require_once 'includes/inc.functions.php';
 $InsertedNum = lingx_GetRemoteSatImages($FTPArray, $LocalDir, $RemoteDir, $RemoteFiles, $DownloadInterval);
 lingx_DisplayText($Texts['NumOfSatImagesSavedMessage'], 'echo', $DefaultColor, false, '', array('%insertednum%'), array($InsertedNum));
 echo '<br />';
-# Alte Sat-Bilder lÃ¶schen
+# Alte Sat-Bilder löschen
 $DeletedNum = lingx_ClearCache($LocalDir, $ClearCacheInterval);
 lingx_DisplayText($Texts['NumOfSatImagesDeletedMessage'], 'echo', $DefaultColor, false, '', array('%deletednum%'), array($DeletedNum));
 mysql_close($DBConnection);

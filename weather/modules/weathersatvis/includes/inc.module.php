@@ -18,7 +18,7 @@ if(!defined('VERIFIED'))
   # Ordner des Modules
   $ModuleDir = 'modules/weathersatvis/';
 
-  # Geben Sie hier den SchlÃ¼ssel des Navigationspunktes an, unter welchem das Modul zugeordnet und angezeigt werden soll:
+  # Geben Sie hier den Schlüssel des Navigationspunktes an, unter welchem das Modul zugeordnet und angezeigt werden soll:
   $NavigationPointKey = 'Wetter-Sat';
 
   # An welcher Position soll der Link zum Modul in der Navigation stehen? Je kleiner die Zahl, desto weiter oben wird der Link angeordnet

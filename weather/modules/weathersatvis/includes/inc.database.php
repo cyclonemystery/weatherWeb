@@ -57,6 +57,7 @@ function lingx_DBArray($SQLString, $IsSingleArray = true)
   $NumRows = lingx_DBNumRows($Query);
   if($IsSingleArray == true)
   {
+<<<<<<< HEAD
 	$Array = lingx_DBFetchArray($Query);
   }
   else
@@ -69,6 +70,21 @@ function lingx_DBArray($SQLString, $IsSingleArray = true)
   return array('Num' => $NumRows, 'Data' => $Array);
 }
 # Datenbank-Sicherheitsfunktion für HTML Daten
+=======
+        $Array = lingx_DBFetchArray($Query);
+  }
+  else
+  {
+        while($FetchArray = lingx_DBFetchArray($Query))
+        {
+          $Array[] = $FetchArray;
+        }
+  }
+  return array('Num' => $NumRows, 'Data' => $Array);
+}
+
+# Datenbank-Sicherheitsfunktion f�r HTML Daten
+>>>>>>> a74c513... Seit Wochenende lauffähige Version. Hier sind nun alle Variabeln richtig
 function lingx_SecurityHTML($Value)
 {
   $Value = (isset($Value) && !empty($Value) || $Value == 0) ? $Value : '';
@@ -76,23 +92,37 @@ function lingx_SecurityHTML($Value)
   $Replace = '';
   foreach($HEX as $Search)
   {
+<<<<<<< HEAD
 	$Value = str_replace($Search, $Replace, $Value);
+=======
+        $Value = str_replace($Search, $Replace, $Value);
+>>>>>>> a74c513... Seit Wochenende lauffähige Version. Hier sind nun alle Variabeln richtig
   }
   $Value = stripslashes(str_replace('\r\n', '', mysql_real_escape_string(trim($Value))));
   return $Value;
 }
+<<<<<<< HEAD
 # Datenbank-Sicherheitsfunktion für alle anderen Daten, ausgenommen HTML
+=======
+
+# Datenbank-Sicherheitsfunktion f�r alle anderen Daten, ausgenommen HTML
+>>>>>>> a74c513... Seit Wochenende lauffähige Version. Hier sind nun alle Variabeln richtig
 function lingx_Security($Value)
 {
   $Unmask = array('*', "'", '"');
   $Replace = '';
   foreach($Unmask as $Search)
   {
+<<<<<<< HEAD
 	$Value = str_replace($Search, $Replace, $Value);
+=======
+        $Value = str_replace($Search, $Replace, $Value);
+>>>>>>> a74c513... Seit Wochenende lauffähige Version. Hier sind nun alle Variabeln richtig
   }
   $Value = lingx_SecurityHTML(htmlentities($Value));
   return $Value;
 }
+<<<<<<< HEAD
 # Benötigte Tabelle erstellen, falls sie nicht existiert
 lingx_DBQuery("
   create table if not exists ".DB_TABLE_SATVIS_IMAGES." (    
@@ -103,3 +133,16 @@ lingx_DBQuery("
   ) engine=myisam default character set=utf8 collate=utf8_general_ci auto_increment=1 ; 
 ");
 ?>
+=======
+
+# Ben�tigte Tabelle erstellen, falls sie nicht existiert
+lingx_DBQuery("
+  create table if not exists ".DB_TABLE_SAT_IMAGES." (
+        sat_image_id int(11) not null auto_increment,
+        sat_image_date datetime default '0000-00-00 00:00:00',
+        sat_image_name varchar(250) not null,
+        primary key (sat_image_id)
+  ) engine=myisam default character set=utf8 collate=utf8_general_ci auto_increment=1 ;
+");
+?>
+>>>>>>> a74c513... Seit Wochenende lauffähige Version. Hier sind nun alle Variabeln richtig
